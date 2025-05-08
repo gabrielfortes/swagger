@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais do Swagger UI */
+.swagger-ui .opblock-tag {
+  font-size: 18px !important;
+  margin: 20px 0 10px 0 !important;
+  color: #2d3748 !important;
+}
+
+.swagger-ui .opblock {
+  margin: 0 0 15px 0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Cores dos métodos HTTP */
+.swagger-ui .opblock-get {
+  background: #ebf8ff !important;
+  border-color: #90cdf4 !important;
+}
+
+.swagger-ui .opblock-post {
+  background: #f0fff4 !important;
+  border-color: #9ae6b4 !important;
+}
+
+.swagger-ui .opblock-put {
+  background: #fff5f5 !important;
+  border-color: #feb2b2 !important;
+}
+
+.swagger-ui .opblock-delete {
+  background: #fff5f5 !important;
+  border-color: #fc8181 !important;
+}
+
+/* Cabeçalho das operações */
+.swagger-ui .opblock .opblock-summary {
+  padding: 12px !important;
+}
+
+.swagger-ui .opblock-summary-method {
+  border-radius: 6px !important;
+  min-width: 80px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+}
+
+/* Botões e controles */
+.swagger-ui .btn {
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+}
+
+.swagger-ui select {
+  border-radius: 6px !important;
+  border-color: #e2e8f0 !important;
+}
+
+.swagger-ui input[type=text] {
+  border-radius: 6px !important;
+  border-color: #e2e8f0 !important;
+}
+
+.swagger-ui textarea {
+  border-radius: 6px !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Seção de respostas */
+.swagger-ui .responses-table .response {
+  padding: 16px !important;
+}
+
+.swagger-ui .model-box {
+  padding: 16px !important;
+  border-radius: 6px !important;
+  background: #f7fafc !important;
+}
+
+/* Seção de modelos */
+.swagger-ui section.models {
+  background: #fff !important;
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.swagger-ui section.models h4 {
+  padding: 12px !important;
+  font-weight: 600 !important;
+  color: #2d3748 !important;
+}
+
+/* Animações suaves */
+.swagger-ui .opblock-body {
+  transition: all 0.3s ease !important;
+}
+
+.swagger-ui .tab {
+  transition: all 0.3s ease !important;
+}
+
+/* Tema escuro */
+.swagger-ui-dark {
+  background: #1a202c !important;
+  color: #e2e8f0 !important;
+}
+
+.swagger-ui-dark .opblock {
+  background: #2d3748 !important;
+  border-color: #4a5568 !important;
+}
+
+.swagger-ui-dark .opblock-tag {
+  color: #e2e8f0 !important;
+}
+
+.swagger-ui-dark .model-box {
+  background: #2d3748 !important;
+}
+
+.swagger-ui-dark section.models {
+  background: #2d3748 !important;
+  border-color: #4a5568 !important;
+}
