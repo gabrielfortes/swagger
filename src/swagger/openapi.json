@@ -48,7 +48,9 @@
   "paths": {
     "/auth/login": {
       "post": {
-        "tags": ["Authentication"],
+        "tags": [
+          "Authentication"
+        ],
         "summary": "Login to the application",
         "description": "Authenticate a user with email and password",
         "operationId": "login",
@@ -89,7 +91,9 @@
     },
     "/auth/register": {
       "post": {
-        "tags": ["Authentication"],
+        "tags": [
+          "Authentication"
+        ],
         "summary": "Register a new user",
         "description": "Create a new user account",
         "operationId": "register",
@@ -130,7 +134,9 @@
     },
     "/users/profile": {
       "get": {
-        "tags": ["Users"],
+        "tags": [
+          "Users"
+        ],
         "summary": "Get current user profile",
         "description": "Retrieve the profile of the currently authenticated user",
         "operationId": "getCurrentUserProfile",
@@ -165,7 +171,9 @@
     },
     "/farm": {
       "get": {
-        "tags": ["Farms"],
+        "tags": [
+          "Farms"
+        ],
         "summary": "Get all farms",
         "description": "Retrieve a list of all farms accessible to the user",
         "operationId": "getFarms",
@@ -203,7 +211,9 @@
     },
     "/devices": {
       "get": {
-        "tags": ["Devices"],
+        "tags": [
+          "Devices"
+        ],
         "summary": "Get all devices",
         "description": "Retrieve a list of all IoT devices",
         "operationId": "getDevices",
@@ -241,7 +251,9 @@
     },
     "/sensors/{code}/data": {
       "get": {
-        "tags": ["Sensors"],
+        "tags": [
+          "Sensors"
+        ],
         "summary": "Get sensor data",
         "description": "Retrieve data from a specific sensor by its code",
         "operationId": "getSensorData",
@@ -256,21 +268,33 @@
             }
           },
           {
-            "name": "startDate",
+            "name": "from",
             "in": "query",
             "description": "Start date for data filtering (ISO format)",
+            "required": false,
             "schema": {
               "type": "string",
               "format": "date-time"
             }
           },
           {
-            "name": "endDate",
+            "name": "to",
             "in": "query",
             "description": "End date for data filtering (ISO format)",
+            "required": false,
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of data records to retrieve",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
             }
           }
         ],
@@ -338,7 +362,12 @@
             "format": "date-time"
           }
         },
-        "required": ["id", "email", "name", "createdAt"]
+        "required": [
+          "id",
+          "email",
+          "name",
+          "createdAt"
+        ]
       },
       "LoginRequest": {
         "type": "object",
@@ -352,7 +381,10 @@
             "format": "password"
           }
         },
-        "required": ["email", "password"]
+        "required": [
+          "email",
+          "password"
+        ]
       },
       "LoginResponse": {
         "type": "object",
@@ -367,7 +399,11 @@
             "$ref": "#/components/schemas/User"
           }
         },
-        "required": ["accessToken", "refreshToken", "user"]
+        "required": [
+          "accessToken",
+          "refreshToken",
+          "user"
+        ]
       },
       "RegisterRequest": {
         "type": "object",
@@ -384,7 +420,11 @@
             "type": "string"
           }
         },
-        "required": ["email", "password", "name"]
+        "required": [
+          "email",
+          "password",
+          "name"
+        ]
       },
       "Farm": {
         "type": "object",
@@ -408,7 +448,13 @@
             "format": "date-time"
           }
         },
-        "required": ["id", "name", "location", "size", "createdAt"]
+        "required": [
+          "id",
+          "name",
+          "location",
+          "size",
+          "createdAt"
+        ]
       },
       "Device": {
         "type": "object",
@@ -422,11 +468,18 @@
           },
           "type": {
             "type": "string",
-            "enum": ["SENSOR", "ACTUATOR"]
+            "enum": [
+              "SENSOR",
+              "ACTUATOR"
+            ]
           },
           "status": {
             "type": "string",
-            "enum": ["ONLINE", "OFFLINE", "MAINTENANCE"]
+            "enum": [
+              "ONLINE",
+              "OFFLINE",
+              "MAINTENANCE"
+            ]
           },
           "farmId": {
             "type": "string",
@@ -437,7 +490,13 @@
             "format": "date-time"
           }
         },
-        "required": ["id", "name", "type", "status", "farmId"]
+        "required": [
+          "id",
+          "name",
+          "type",
+          "status",
+          "farmId"
+        ]
       },
       "SensorData": {
         "type": "object",
@@ -460,7 +519,13 @@
             "format": "date-time"
           }
         },
-        "required": ["id", "sensorCode", "value", "unit", "timestamp"]
+        "required": [
+          "id",
+          "sensorCode",
+          "value",
+          "unit",
+          "timestamp"
+        ]
       },
       "ErrorResponse": {
         "type": "object",
@@ -475,7 +540,10 @@
             "type": "string"
           }
         },
-        "required": ["statusCode", "message"]
+        "required": [
+          "statusCode",
+          "message"
+        ]
       }
     },
     "securitySchemes": {
